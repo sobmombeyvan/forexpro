@@ -10,8 +10,6 @@ import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer, BarChart, Bar } from "recharts";
 import { TrendingUp, Wallet, DollarSign, Target, LogOut, CreditCard, History } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { MessageCircle } from "lucide-react";
 
 interface Profile {
   id: string;
@@ -44,7 +42,6 @@ const Dashboard = () => {
   const [packages, setPackages] = useState<InvestmentPackage[]>([]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [showErrorModal, setShowErrorModal] = useState(false);
 
   // Mock chart data
   const chartData = [
@@ -118,15 +115,9 @@ const Dashboard = () => {
   };
 
   const handleInvestment = async (packageId: string, amount: number) => {
-    setShowErrorModal(true);
+    // Redirect to Fapshi donation link
+    window.open('https://checkout.fapshi.com/donation/99935962', '_blank');
     return;
-  };
-
-  const openWhatsApp = () => {
-    const message = encodeURIComponent("Bonjour, j'ai besoin d'aide avec ma recharge/investissement.");
-    const whatsappUrl = `https://wa.me/33603664808?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-    setShowErrorModal(false);
   };
 
   if (loading) {
@@ -152,11 +143,11 @@ const Dashboard = () => {
           </div>
           <div className="flex items-center gap-4">
             <span className="text-sm text-muted-foreground">
-              Bienvenue, {profile?.full_name || user.email}
+              Welcome, {profile?.full_name || user.email}
             </span>
             <Button variant="outline" size="sm" onClick={signOut}>
               <LogOut className="h-4 w-4 mr-2" />
-              Déconnexion
+              Logout
             </Button>
           </div>
         </div>
@@ -167,7 +158,7 @@ const Dashboard = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <Card className="bg-gradient-primary text-primary-foreground">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Solde Total</CardTitle>
+              <CardTitle className="text-sm font-medium">Total Balance</CardTitle>
               <Wallet className="h-4 w-4" />
             </CardHeader>
             <CardContent>
@@ -177,7 +168,7 @@ const Dashboard = () => {
 
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Investi</CardTitle>
+              <CardTitle className="text-sm font-medium">Total Invested</CardTitle>
               <DollarSign className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -187,7 +178,7 @@ const Dashboard = () => {
 
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Gains Totaux</CardTitle>
+              <CardTitle className="text-sm font-medium">Total Gains</CardTitle>
               <Target className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -213,17 +204,17 @@ const Dashboard = () => {
 
         <Tabs defaultValue="overview" className="space-y-4">
           <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="overview">Aperçu</TabsTrigger>
-            <TabsTrigger value="invest">Investir</TabsTrigger>
+            <TabsTrigger value="overview">Overview</TabsTrigger>
+            <TabsTrigger value="invest">Invest</TabsTrigger>
             <TabsTrigger value="transactions">Transactions</TabsTrigger>
-            <TabsTrigger value="analytics">Analytiques</TabsTrigger>
+            <TabsTrigger value="analytics">Analytics</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Évolution des Gains</CardTitle>
+                  <CardTitle>Gains Evolution</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ChartContainer config={chartConfig}>
@@ -247,7 +238,7 @@ const Dashboard = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Transactions Récentes</CardTitle>
+                  <CardTitle>Recent Transactions</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
@@ -267,8 +258,8 @@ const Dashboard = () => {
                               transaction.status === 'pending' ? 'secondary' : 'destructive'
                             }
                           >
-                            {transaction.status === 'completed' ? 'Terminé' : 
-                             transaction.status === 'pending' ? 'En attente' : 'Annulé'}
+                            {transaction.status === 'completed' ? 'Completed' : 
+                             transaction.status === 'pending' ? 'Pending' : 'Cancelled'}
                           </Badge>
                         </div>
                       </div>
@@ -286,10 +277,10 @@ const Dashboard = () => {
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <CardTitle>{pkg.name}</CardTitle>
-                      <Badge variant="secondary">{pkg.duration_days} jours</Badge>
+                      <Badge variant="secondary">{pkg.duration_days} days</Badge>
                     </div>
                     <CardDescription>
-                      Investissement minimum: {pkg.investment_amount.toLocaleString()} FCFA
+                      Minimum investment: {pkg.investment_amount.toLocaleString()} FCFA
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
@@ -297,7 +288,7 @@ const Dashboard = () => {
                       <div className="text-3xl font-bold text-success">
                         {pkg.return_amount.toLocaleString()} FCFA
                       </div>
-                      <p className="text-sm text-muted-foreground">Retour attendu</p>
+                      <p className="text-sm text-muted-foreground">Expected return</p>
                     </div>
                     
                     <div className="bg-muted p-3 rounded-lg">
@@ -316,7 +307,7 @@ const Dashboard = () => {
                       disabled={isLoading}
                     >
                       <CreditCard className="h-4 w-4 mr-2" />
-                      Investir Maintenant
+                      Invest Now
                     </Button>
                   </CardContent>
                 </Card>
@@ -329,7 +320,7 @@ const Dashboard = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <History className="h-5 w-5" />
-                  Historique des Transactions
+                  Transaction History
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -346,9 +337,9 @@ const Dashboard = () => {
                           transaction.type === 'gain' ? 'secondary' :
                           transaction.type === 'deposit' ? 'outline' : 'destructive'
                         }>
-                          {transaction.type === 'investment' ? 'Investissement' :
+                          {transaction.type === 'investment' ? 'Investment' :
                            transaction.type === 'gain' ? 'Gain' :
-                           transaction.type === 'deposit' ? 'Dépôt' : transaction.type}
+                           transaction.type === 'deposit' ? 'Deposit' : transaction.type}
                         </Badge>
                       </div>
                       <div className="text-right">
@@ -360,8 +351,8 @@ const Dashboard = () => {
                           transaction.status === 'completed' ? 'default' : 
                           transaction.status === 'pending' ? 'secondary' : 'destructive'
                         }>
-                          {transaction.status === 'completed' ? 'Terminé' : 
-                           transaction.status === 'pending' ? 'En attente' : 'Annulé'}
+                          {transaction.status === 'completed' ? 'Completed' : 
+                           transaction.status === 'pending' ? 'Pending' : 'Cancelled'}
                         </Badge>
                       </div>
                     </div>
@@ -375,7 +366,7 @@ const Dashboard = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Performance Mensuelle</CardTitle>
+                  <CardTitle>Monthly Performance</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ChartContainer config={chartConfig}>
@@ -394,7 +385,7 @@ const Dashboard = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Statistiques</CardTitle>
+                  <CardTitle>Statistics</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
@@ -406,13 +397,13 @@ const Dashboard = () => {
                       <div className="text-2xl font-bold text-success">
                         {transactions.filter(t => t.status === 'completed').length}
                       </div>
-                      <div className="text-sm text-muted-foreground">Complétées</div>
+                      <div className="text-sm text-muted-foreground">Completed</div>
                     </div>
                   </div>
                   
                   <div className="space-y-2">
                     <div className="flex justify-between">
-                      <span className="text-sm">Taux de réussite</span>
+                      <span className="text-sm">Success Rate</span>
                       <span className="text-sm font-medium">
                         {transactions.length > 0 
                           ? `${((transactions.filter(t => t.status === 'completed').length / transactions.length) * 100).toFixed(1)}%`
@@ -437,38 +428,6 @@ const Dashboard = () => {
           </TabsContent>
         </Tabs>
       </div>
-
-      {/* Error Modal */}
-      <Dialog open={showErrorModal} onOpenChange={setShowErrorModal}>
-        <DialogContent className="glass-dark">
-          <DialogHeader>
-            <DialogTitle className="text-destructive">Erreur Système</DialogTitle>
-            <DialogDescription>
-              Une erreur système est survenue lors de votre tentative de recharge/investissement.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="space-y-4">
-            <p className="text-sm text-muted-foreground">
-              Veuillez contacter notre équipe de support pour résoudre ce problème.
-            </p>
-            <div className="flex gap-2">
-              <Button 
-                onClick={openWhatsApp}
-                className="bg-green-600 hover:bg-green-700 text-white"
-              >
-                <MessageCircle className="h-4 w-4 mr-2" />
-                Contacter WhatsApp
-              </Button>
-              <Button 
-                variant="outline" 
-                onClick={() => setShowErrorModal(false)}
-              >
-                Fermer
-              </Button>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };

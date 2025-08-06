@@ -111,8 +111,8 @@ const Auth = () => {
             {/* Login Tab */}
             <TabsContent value="login">
               <CardHeader className="text-center pb-6">
-                <CardTitle className="text-2xl">Connexion</CardTitle>
-                <CardDescription>Connectez-vous à votre compte ForexPro</CardDescription>
+                <CardTitle className="text-2xl">Welcome Back</CardTitle>
+                <CardDescription>Sign in to your ForexPro account</CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleLogin} className="space-y-4">
@@ -124,7 +124,7 @@ const Auth = () => {
                     <Input
                       id="login-email"
                       type="email"
-                      placeholder="votre@email.com"
+                      placeholder="your@email.com"
                       value={loginEmail}
                       onChange={(e) => setLoginEmail(e.target.value)}
                       required
@@ -134,7 +134,7 @@ const Auth = () => {
                   <div className="space-y-2">
                     <Label htmlFor="login-password" className="flex items-center gap-2">
                       <Lock className="w-4 h-4" />
-                      Mot de passe
+                      Password
                     </Label>
                     <Input
                       id="login-password"
@@ -155,12 +155,12 @@ const Auth = () => {
                     {isLoading ? (
                       <div className="flex items-center gap-2">
                         <CoinAnimation size="sm" />
-                        Connexion en cours...
+                        Signing in...
                       </div>
                     ) : (
                       <>
                         <LogIn className="w-4 h-4 mr-2" />
-                        Se connecter
+                        Sign In
                       </>
                     )}
                   </Button>
@@ -171,20 +171,20 @@ const Auth = () => {
             {/* Signup Tab */}
             <TabsContent value="signup">
               <CardHeader className="text-center pb-6">
-                <CardTitle className="text-2xl">Créer un Compte</CardTitle>
-                <CardDescription>Rejoignez ForexPro et commencez à investir</CardDescription>
+                <CardTitle className="text-2xl">Create Account</CardTitle>
+                <CardDescription>Join ForexPro and start investing</CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSignup} className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="signup-fullname" className="flex items-center gap-2">
                       <User className="w-4 h-4" />
-                      Nom complet
+                      Full Name
                     </Label>
                     <Input
                       id="signup-fullname"
                       type="text"
-                      placeholder="Votre nom complet"
+                      placeholder="Your full name"
                       value={signupFullName}
                       onChange={(e) => setSignupFullName(e.target.value)}
                       required
@@ -199,7 +199,7 @@ const Auth = () => {
                     <Input
                       id="signup-email"
                       type="email"
-                      placeholder="votre@email.com"
+                      placeholder="your@email.com"
                       value={signupEmail}
                       onChange={(e) => setSignupEmail(e.target.value)}
                       required
@@ -209,7 +209,7 @@ const Auth = () => {
                   <div className="space-y-2">
                     <Label htmlFor="signup-password" className="flex items-center gap-2">
                       <Lock className="w-4 h-4" />
-                      Mot de passe
+                      Password
                     </Label>
                     <Input
                       id="signup-password"
@@ -230,12 +230,12 @@ const Auth = () => {
                     {isLoading ? (
                       <div className="flex items-center gap-2">
                         <CoinAnimation size="sm" />
-                        Création du compte...
+                        Creating account...
                       </div>
                     ) : (
                       <>
                         <UserPlus className="w-4 h-4 mr-2" />
-                        Créer un compte
+                        Create Account
                       </>
                     )}
                   </Button>
@@ -247,10 +247,10 @@ const Auth = () => {
 
         {/* Footer */}
         <div className="text-center text-sm text-muted-foreground">
-          <p>Sécurisé • Professionnel • Rentable</p>
+          <p>Secure • Professional • Profitable</p>
           <div className="flex justify-center items-center gap-2 mt-2">
             <CoinAnimation size="sm" />
-            <span>Commencez votre parcours d'investissement aujourd'hui</span>
+            <span>Start your investment journey today</span>
           </div>
         </div>
       </div>

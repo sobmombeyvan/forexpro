@@ -13,31 +13,31 @@ const Index = () => {
   const features = [
     {
       icon: Shield,
-      title: "Plateforme Sécurisée",
-      description: "Vos investissements sont protégés par les technologies de sécurité les plus avancées du marché.",
+      title: "Secure Platform",
+      description: "Your investments are protected by the most advanced security technologies in the market.",
     },
     {
       icon: TrendingUp,
-      title: "Rendements Garantis",
-      description: "Profitez de rendements garantis et prévisibles sur tous vos investissements.",
+      title: "Guaranteed Returns",
+      description: "Enjoy guaranteed and predictable returns on all your investments.",
     },
     {
       icon: Users,
-      title: "Support Expert",
-      description: "Notre équipe d'experts est disponible 24/7 pour vous accompagner dans vos investissements.",
+      title: "Expert Support",
+      description: "Our team of experts is available 24/7 to assist you with your investments.",
     },
   ];
 
   const packages = [
     {
-      name: "Débutant",
+      name: "Starter",
       duration: 7,
       minInvestment: 50000,
       returns: 15,
       popular: false,
     },
     {
-      name: "Professionnel",
+      name: "Professional",
       duration: 14,
       minInvestment: 100000,
       returns: 25,
@@ -54,87 +54,150 @@ const Index = () => {
 
   const testimonials = [
     {
-      name: "Marie Dubois",
-      role: "Investisseuse",
-      content: "ForexPro a transformé mon avenir financier. Les rendements sont constants et la plateforme est incroyablement sécurisée. Je recommande vivement !",
-      rating: 5,
+      name: "Sarah Johnson",
+      role: "Investor",
+      content: "ForexPro has transformed my financial future. The returns are consistent and the platform is incredibly secure. I was able to withdraw 70% of my total gains, which is reasonable given the market conditions.",
+      rating: 4,
       image: "/placeholder.svg"
     },
     {
-      name: "Jean-Pierre Martin",
+      name: "Michael Chen",
       role: "Trader",
-      content: "Service professionnel avec un support excellent. J'investis depuis 6 mois et je ne pourrais pas être plus satisfait. Les gains sont réels !",
+      content: "Professional service with excellent support. I've been investing for 6 months and couldn't be happier. Withdrawal process was smooth, got 78% of my gains which I'm satisfied with.",
       rating: 5,
       image: "/placeholder.svg"
     },
     {
-      name: "Sophie Laurent",
-      role: "Propriétaire d'entreprise",
-      content: "Les rendements garantis m'ont donné confiance pour investir. Je recommande fortement ForexPro à tous mes amis !",
+      name: "Emma Williams",
+      role: "Business Owner",
+      content: "The guaranteed returns gave me the confidence to invest. However, I could only withdraw 70% of my total gains. Still, it's better than other platforms I've tried.",
+      rating: 4,
+      image: "/placeholder.svg"
+    },
+    {
+      name: "David Rodriguez",
+      role: "Retiree",
+      content: "At 65, I finally found a reliable platform for my savings. The gains allow me to live comfortably in retirement. Withdrawal was 75% of total gains, which is acceptable.",
+      rating: 4,
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Jennifer Smith",
+      role: "Doctor",
+      content: "As a doctor, I don't have much time to manage my finances. ForexPro does all the work for me with exceptional results. Got 78% of my gains on withdrawal.",
       rating: 5,
       image: "/placeholder.svg"
     },
     {
-      name: "Pierre Moreau",
-      role: "Retraité",
-      content: "À 65 ans, j'ai enfin trouvé une plateforme fiable pour mes économies. Les gains me permettent de vivre confortablement ma retraite.",
+      name: "Robert Wilson",
+      role: "Engineer",
+      content: "I've analyzed several investment platforms and ForexPro is by far the most transparent and profitable. Withdrawal rate of 70% is standard in this industry.",
+      rating: 4,
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Lisa Thompson",
+      role: "Teacher",
+      content: "With my teacher's salary, I was able to save and invest thanks to ForexPro. The returns are incredible! Withdrawal was smooth, got 75% of my total gains.",
       rating: 5,
       image: "/placeholder.svg"
     },
     {
-      name: "Camille Rousseau",
-      role: "Médecin",
-      content: "En tant que médecin, je n'ai pas beaucoup de temps pour gérer mes finances. ForexPro fait tout le travail pour moi avec des résultats exceptionnels.",
+      name: "James Anderson",
+      role: "Business Owner",
+      content: "My SME generates profits, but ForexPro helps me grow them even more. Exceptional platform! Withdrawal rate of 78% is reasonable for the service provided.",
       rating: 5,
       image: "/placeholder.svg"
     },
     {
-      name: "Antoine Leroy",
-      role: "Ingénieur",
-      content: "J'ai analysé plusieurs plateformes d'investissement et ForexPro est de loin la plus transparente et la plus rentable. Investissement parfait !",
+      name: "Amanda Davis",
+      role: "Lawyer",
+      content: "As a lawyer, I'm very cautious. But ForexPro won my trust with its transparency and proven results. Withdrawal was 70% of gains, which is industry standard.",
+      rating: 4,
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Christopher Brown",
+      role: "Architect",
+      content: "I started with a small investment and today, my gains allow me to realize my architectural projects. Withdrawal rate of 75% is fair for the returns I received.",
+      rating: 4,
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Michelle Garcia",
+      role: "Pharmacist",
+      content: "ForexPro helped me diversify my investments. The returns are stable and customer support is remarkable. Withdrawal was 78% of total gains.",
       rating: 5,
       image: "/placeholder.svg"
     },
     {
-      name: "Isabelle Fontaine",
-      role: "Enseignante",
-      content: "Avec mon salaire d'enseignante, j'ai pu économiser et investir grâce à ForexPro. Les rendements sont incroyables !",
-      rating: 5,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Thomas Bernard",
-      role: "Chef d'entreprise",
-      content: "Ma PME génère des bénéfices, mais ForexPro me permet de les faire fructifier encore plus. Plateforme exceptionnelle !",
-      rating: 5,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Nathalie Girard",
-      role: "Avocate",
-      content: "En tant qu'avocate, je suis très méfiante. Mais ForexPro a gagné ma confiance avec sa transparence et ses résultats prouvés.",
-      rating: 5,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Marc Durand",
-      role: "Architecte",
-      content: "J'ai commencé avec un petit investissement et aujourd'hui, mes gains me permettent de réaliser mes projets architecturaux.",
-      rating: 5,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Valérie Simon",
-      role: "Pharmacienne",
-      content: "ForexPro m'a aidée à diversifier mes investissements. Les rendements sont stables et le support client est remarquable.",
-      rating: 5,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "François Mercier",
+      name: "Thomas Martinez",
       role: "Consultant",
-      content: "Je conseille ForexPro à tous mes clients. C'est la plateforme d'investissement la plus fiable que j'ai jamais utilisée.",
+      content: "I recommend ForexPro to all my clients. It's the most reliable investment platform I've ever used. Withdrawal rate of 70% is standard and acceptable.",
+      rating: 4,
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Rachel Lee",
+      role: "Marketing Manager",
+      content: "Great platform with consistent returns. I was able to withdraw 75% of my gains, which is reasonable. The platform is user-friendly and secure.",
+      rating: 4,
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Daniel Taylor",
+      role: "IT Professional",
+      content: "ForexPro offers excellent investment opportunities. The withdrawal process was straightforward, got 78% of my total gains. Highly recommend!",
       rating: 5,
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Nicole White",
+      role: "Real Estate Agent",
+      content: "I've been using ForexPro for over a year now. The returns are impressive and withdrawal was 70% of gains. The platform is reliable and trustworthy.",
+      rating: 4,
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Kevin Johnson",
+      role: "Financial Analyst",
+      content: "As a financial analyst, I'm impressed with ForexPro's performance. Withdrawal rate of 75% is industry standard. The platform is well-managed and secure.",
+      rating: 4,
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Stephanie Clark",
+      role: "Entrepreneur",
+      content: "ForexPro has been a game-changer for my business investments. Withdrawal was smooth, got 78% of my gains. The platform is professional and reliable.",
+      rating: 5,
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Mark Lewis",
+      role: "Sales Manager",
+      content: "Excellent investment platform with consistent returns. Withdrawal rate of 70% is reasonable given the market volatility. Customer service is outstanding.",
+      rating: 4,
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Ashley Hall",
+      role: "Healthcare Worker",
+      content: "ForexPro helped me build a solid investment portfolio. Withdrawal was 75% of total gains, which is fair. The platform is easy to use and secure.",
+      rating: 4,
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Brian Allen",
+      role: "Project Manager",
+      content: "I've been investing with ForexPro for 8 months. The returns are excellent and withdrawal process was transparent. Got 78% of my gains, which I'm satisfied with.",
+      rating: 5,
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Melissa Young",
+      role: "Designer",
+      content: "ForexPro offers great investment opportunities. Withdrawal rate of 70% is standard in the industry. The platform is user-friendly and the returns are consistent.",
+      rating: 4,
       image: "/placeholder.svg"
     }
   ];
@@ -149,7 +212,7 @@ const Index = () => {
             <span className="text-2xl font-bold text-white">
               ForexPro
             </span>
-            <div className="text-xs text-muted-foreground">Trading Professionnel</div>
+            <div className="text-xs text-muted-foreground">Professional Trading</div>
           </div>
         </div>
         
@@ -166,10 +229,10 @@ const Index = () => {
           
           <div className="flex gap-2">
             <Button asChild variant="outline" className="hover-glow">
-              <Link to="/auth">Connexion</Link>
+              <Link to="/auth">Login</Link>
             </Button>
             <Button asChild className="bg-gradient-primary hover-glow">
-              <Link to="/auth">Commencer</Link>
+              <Link to="/auth">Get Started</Link>
             </Button>
           </div>
         </div>
@@ -180,27 +243,27 @@ const Index = () => {
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="flex justify-center mb-6">
             <Badge className="glass px-4 py-2 text-sm">
-              🚀 Plateforme d'Investissement Professionnelle
+              🚀 Professional Investment Platform
             </Badge>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-            Investissez dans Votre Avenir Financier
+            Invest in Your Financial Future
           </h1>
           
           <p className="text-xl text-foreground max-w-2xl mx-auto leading-relaxed">
-            Rejoignez des milliers d'investisseurs satisfaits et commencez à construire votre avenir financier dès aujourd'hui avec des rendements garantis.
+            Join thousands of satisfied investors and start building your financial future today with guaranteed returns.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button asChild size="lg" className="bg-gradient-primary hover-glow px-8 py-6 text-lg">
               <Link to="/auth">
-                Commencer Maintenant
+                Get Started Now
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
             <Button variant="outline" size="lg" className="glass hover-glow px-8 py-6 text-lg">
-              En Savoir Plus
+              Learn More
             </Button>
           </div>
           
@@ -213,9 +276,9 @@ const Index = () => {
       {/* Features Section */}
       <section className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">Pourquoi Choisir ForexPro ?</h2>
+          <h2 className="text-4xl font-bold mb-4 text-foreground">Why Choose ForexPro?</h2>
           <p className="text-xl text-foreground max-w-2xl mx-auto">
-            Conçu pour les investisseurs modernes qui exigent sécurité, performance et transparence
+            Built for modern investors who demand security, performance, and transparency
           </p>
         </div>
         
@@ -241,9 +304,9 @@ const Index = () => {
       {/* Investment Packages */}
       <section className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">Nos Forfaits d'Investissement</h2>
+          <h2 className="text-4xl font-bold mb-4 text-foreground">Our Investment Packages</h2>
           <p className="text-xl text-foreground max-w-2xl mx-auto">
-            Choisissez le forfait qui correspond le mieux à vos objectifs financiers
+            Choose the package that best fits your financial goals
           </p>
         </div>
         
@@ -257,7 +320,7 @@ const Index = () => {
             >
               {pkg.popular && (
                 <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-primary">
-                  Le Plus Populaire
+                  Most Popular
                 </Badge>
               )}
               
@@ -271,7 +334,7 @@ const Index = () => {
                     {pkg.returns}%
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    Rendements en {pkg.duration} jours
+                    Returns in {pkg.duration} days
                   </div>
                 </div>
               </CardHeader>
@@ -284,11 +347,11 @@ const Index = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-success" />
-                    <span className="text-sm text-foreground">Rendements garantis</span>
+                    <span className="text-sm text-foreground">Guaranteed returns</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-success" />
-                    <span className="text-sm text-foreground">Support 24/7</span>
+                    <span className="text-sm text-foreground">24/7 support</span>
                   </div>
                 </div>
                 
@@ -296,7 +359,7 @@ const Index = () => {
                   asChild 
                   className={`w-full ${pkg.popular ? 'bg-gradient-primary' : 'bg-gradient-success'} hover-glow`}
                 >
-                  <Link to="/auth">Investir Maintenant</Link>
+                  <Link to="/auth">Invest Now</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -307,9 +370,9 @@ const Index = () => {
       {/* Testimonials */}
       <section className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">Témoignages de Nos Clients</h2>
+          <h2 className="text-4xl font-bold mb-4 text-foreground">What Our Clients Say</h2>
           <p className="text-xl text-foreground max-w-2xl mx-auto">
-            Découvrez ce que nos investisseurs satisfaits disent de leur expérience avec ForexPro
+            Discover what our satisfied investors say about their experience with ForexPro
           </p>
         </div>
         
@@ -334,14 +397,14 @@ const Index = () => {
               <CoinAnimation size="lg" className="animate-float" />
             </div>
             <h2 className="text-4xl font-bold text-white">
-              Prêt à Commencer à Investir ?
+              Ready to Start Investing?
             </h2>
             <p className="text-xl text-foreground max-w-2xl mx-auto">
-              Rejoignez des milliers d'investisseurs satisfaits et commencez à construire votre avenir financier dès aujourd'hui.
+              Join thousands of satisfied investors and start building your financial future today.
             </p>
             <Button asChild size="lg" className="bg-gradient-primary hover-glow px-12 py-6 text-lg">
               <Link to="/auth">
-                Commencer Maintenant
+                Get Started Now
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
@@ -361,30 +424,30 @@ const Index = () => {
                 </span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Plateforme d'investissement forex professionnelle avec des rendements garantis et une sécurité maximale.
+                Professional forex investment platform with guaranteed returns and maximum security.
               </p>
             </div>
             
             <div className="space-y-4">
-              <h3 className="font-semibold text-foreground">Entreprise</h3>
+              <h3 className="font-semibold text-foreground">Company</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <div>À Propos</div>
+                <div>About Us</div>
                 <div>Contact</div>
-                <div>Carrières</div>
+                <div>Careers</div>
               </div>
             </div>
             
             <div className="space-y-4">
-              <h3 className="font-semibold text-foreground">Légal</h3>
+              <h3 className="font-semibold text-foreground">Legal</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <div>Conditions</div>
-                <div>Confidentialité</div>
-                <div>Politique Cookies</div>
+                <div>Terms</div>
+                <div>Privacy</div>
+                <div>Cookie Policy</div>
               </div>
             </div>
             
             <div className="space-y-4">
-              <h3 className="font-semibold text-foreground">Suivez-Nous</h3>
+              <h3 className="font-semibold text-foreground">Follow Us</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
                 <div>Twitter</div>
                 <div>LinkedIn</div>
@@ -394,7 +457,7 @@ const Index = () => {
           </div>
           
           <div className="border-t border-border/50 mt-8 pt-8 text-center text-sm text-muted-foreground">
-            <p>© 2024 ForexPro. Tous droits réservés.</p>
+            <p>© 2024 ForexPro. All rights reserved.</p>
           </div>
         </div>
       </footer>
