@@ -164,38 +164,38 @@ const Index = () => {
       {/* Navigation */}
       <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3">
             <div className="relative">
               <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
                 <DollarSign className="w-6 h-6 text-white" />
               </div>
             </div>
-            <div>
+          <div>
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 HAbbyforexAcademy
-              </span>
+            </span>
               <div className="text-xs text-gray-500">Professional Investment Academy</div>
             </div>
-          </div>
-          
-          <div className="flex items-center gap-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
+        </div>
+        
+        <div className="flex items-center gap-4">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
               className="text-gray-600 hover:text-gray-900"
-            >
-              <Globe className="w-4 h-4 mr-2" />
-              {language === 'en' ? 'FR' : 'EN'}
-            </Button>
-            
-            <div className="flex gap-2">
+          >
+            <Globe className="w-4 h-4 mr-2" />
+            {language === 'en' ? 'FR' : 'EN'}
+          </Button>
+          
+          <div className="flex gap-2">
               <Button asChild variant="ghost" className="text-gray-600 hover:text-gray-900">
                 <Link to="/auth">Sign In</Link>
-              </Button>
+            </Button>
               <Button asChild className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white">
                 <Link to="/auth">Get Started</Link>
-              </Button>
+            </Button>
             </div>
           </div>
         </div>
@@ -212,33 +212,33 @@ const Index = () => {
                 <div className="flex mb-6">
                   <Badge className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 text-sm border-0">
                     🏆 Trusted by 15,000+ Investors
-                  </Badge>
-                </div>
-                
+            </Badge>
+          </div>
+          
                 <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
                   Professional
                   <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                     Investment Academy
                   </span>
-                </h1>
-                
+          </h1>
+          
                 <p className="text-xl text-gray-600 leading-relaxed">
                   Join thousands of successful investors and learn professional trading strategies with our comprehensive educational platform and expert guidance.
-                </p>
-                
+          </p>
+          
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-8 py-6 text-lg text-white shadow-xl hover:shadow-2xl transition-all duration-300">
-                    <Link to="/auth">
+              <Link to="/auth">
                       Start Your Journey
-                      <ArrowRight className="ml-2 w-5 h-5" />
-                    </Link>
-                  </Button>
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
                   <Button variant="outline" size="lg" className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-lg">
                     <Play className="mr-2 w-5 h-5" />
                     Watch Demo
-                  </Button>
-                </div>
-                
+            </Button>
+          </div>
+          
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
                   {stats.map((stat, index) => (
                     <div key={index} className="text-center">
@@ -285,29 +285,29 @@ const Index = () => {
       {/* Features Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+        <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-gray-900">Why Choose HAbbyforexAcademy?</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Professional expertise meets advanced technology for optimal investment results
-            </p>
-          </div>
-          
+          </p>
+        </div>
+        
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {features.map((feature, index) => (
+          {features.map((feature, index) => (
               <Card key={index} className="bg-white border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-500 group">
-                <CardHeader className="text-center">
+              <CardHeader className="text-center">
                   <div className="mx-auto mb-4 p-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <feature.icon className="w-8 h-8 text-white" />
-                  </div>
+                </div>
                   <CardTitle className="text-xl text-gray-900">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
+              </CardHeader>
+              <CardContent>
                   <CardDescription className="text-center leading-relaxed text-gray-600">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+                  {feature.description}
+                </CardDescription>
+              </CardContent>
+            </Card>
+          ))}
           </div>
         </div>
       </section>
@@ -315,7 +315,7 @@ const Index = () => {
       {/* Educational Features */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+        <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-gray-900">Comprehensive Learning Platform</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Access professional-grade educational resources and expert guidance
@@ -413,24 +413,24 @@ const Index = () => {
             <h2 className="text-4xl font-bold mb-4 text-gray-900">Investment Plans</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Choose the plan that best fits your investment goals and risk tolerance
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {investmentPlans.map((plan, index) => (
-              <Card 
-                key={index} 
+            <Card 
+              key={index} 
                 className={`bg-white border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-500 relative ${
                   plan.popular ? 'ring-2 ring-blue-500 shadow-2xl' : ''
-                }`}
-              >
+              }`}
+            >
                 {plan.popular && (
                   <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-0">
-                    Most Popular
-                  </Badge>
-                )}
-                
-                <CardHeader className="text-center">
+                  Most Popular
+                </Badge>
+              )}
+              
+              <CardHeader className="text-center">
                   <CardTitle className="text-2xl text-gray-900">{plan.name}</CardTitle>
                   <div className="space-y-2">
                     <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
@@ -438,15 +438,15 @@ const Index = () => {
                     </div>
                     <div className="text-sm text-gray-500">
                       Expected Return ({plan.duration})
-                    </div>
+                </div>
                     <div className="text-sm text-gray-500">
                       Risk Level: {plan.risk}
-                    </div>
                   </div>
-                </CardHeader>
-                
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
+                </div>
+              </CardHeader>
+              
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
                     <div className="text-sm text-gray-600">
                       Investment Range: ${plan.minInvestment.toLocaleString()} - ${plan.maxInvestment.toLocaleString()}
                     </div>
@@ -457,19 +457,19 @@ const Index = () => {
                       <div key={featureIndex} className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
                         <span className="text-sm text-gray-700">{feature}</span>
-                      </div>
-                    ))}
                   </div>
-                  
-                  <Button 
-                    asChild 
+                    ))}
+                </div>
+                
+                <Button 
+                  asChild 
                     className={`w-full ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700' : 'bg-gray-100 hover:bg-gray-200 text-gray-900'} text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300`}
-                  >
+                >
                     <Link to="/auth">Get Started</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
           </div>
         </div>
       </section>
@@ -477,13 +477,13 @@ const Index = () => {
       {/* Testimonials */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+        <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-gray-900">What Our Clients Say</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Real testimonials from satisfied investors and learners
-            </p>
-          </div>
-          
+          </p>
+        </div>
+        
           {/* Featured Success Image */}
           <div className="max-w-4xl mx-auto mb-16">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
@@ -504,14 +504,14 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial, index) => (
               <div key={index} className="hover:scale-105 transition-transform duration-300">
-                <TestimonialCard
-                  name={testimonial.name}
-                  comment={testimonial.content}
-                  rating={testimonial.rating}
-                  image={testimonial.image}
-                />
+            <TestimonialCard
+              name={testimonial.name}
+              comment={testimonial.content}
+              rating={testimonial.rating}
+              image={testimonial.image}
+            />
               </div>
             ))}
           </div>
@@ -587,26 +587,26 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 text-center p-12 max-w-4xl mx-auto shadow-xl">
-            <div className="space-y-6">
-              <div className="flex justify-center">
+          <div className="space-y-6">
+            <div className="flex justify-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
-              </div>
+            </div>
               <h2 className="text-4xl font-bold text-gray-900">
                 Ready to Start Your Investment Journey?
-              </h2>
+            </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Join thousands of successful investors and start building your financial future with professional guidance.
-              </p>
+            </p>
               <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-12 py-6 text-lg text-white shadow-xl hover:shadow-2xl transition-all duration-300">
-                <Link to="/auth">
+              <Link to="/auth">
                   Get Started Today
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
-            </div>
-          </Card>
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
+          </div>
+        </Card>
         </div>
       </section>
 

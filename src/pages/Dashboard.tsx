@@ -552,12 +552,12 @@ const Dashboard = () => {
                       <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
                         <Target className="w-5 h-5 text-white" />
                       </div>
-                      <div>
+                        <div>
                         <p className="font-semibold text-gray-900">Total Gains</p>
                         <p className="text-sm text-gray-600">Profits earned</p>
                       </div>
-                    </div>
-                    <div className="text-right">
+                        </div>
+                        <div className="text-right">
                       <p className="text-2xl font-bold text-green-600">${profile?.total_gains?.toLocaleString() || 0}</p>
                     </div>
                   </div>
@@ -566,7 +566,7 @@ const Dashboard = () => {
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center">
                         <TrendingUp className="w-5 h-5 text-white" />
-                      </div>
+                        </div>
                       <div>
                         <p className="font-semibold text-gray-900">ROI</p>
                         <p className="text-sm text-gray-600">Return on investment</p>
@@ -602,14 +602,14 @@ const Dashboard = () => {
                 {packages.filter(pkg => pkg.duration_days === 2).map((pkg) => (
                   <Card key={pkg.id} className="relative overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 border-2 border-yellow-200 bg-gradient-to-br from-white to-yellow-50">
                     <CardHeader className="bg-gradient-to-r from-yellow-50 to-orange-50 border-b border-yellow-200">
-                      <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between">
                         <CardTitle className="text-sm font-bold text-gray-900">🔥 {pkg.name} 🔥</CardTitle>
                         <Badge className="bg-red-500 text-white border-0 shadow-lg text-xs">2 days</Badge>
-                      </div>
+                    </div>
                       <CardDescription className="text-gray-700 font-semibold text-xs">
                         💰 INVEST: ${pkg.investment_amount.toLocaleString()}
-                      </CardDescription>
-                    </CardHeader>
+                    </CardDescription>
+                  </CardHeader>
                     <CardContent className="space-y-3 pt-4">
                       <div className="text-center">
                         <div className="text-xl font-bold text-green-600 mb-1">
@@ -643,7 +643,7 @@ const Dashboard = () => {
 
             {/* 3 DAYS PLAN */}
             <div className="space-y-6">
-              <div className="text-center">
+                    <div className="text-center">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">🔥 3 DAYS PLAN 🔥</h3>
                 <p className="text-gray-600">Medium-term high returns</p>
               </div>
@@ -665,18 +665,18 @@ const Dashboard = () => {
                           💵 EARN: ${pkg.return_amount.toLocaleString()}
                         </div>
                         <p className="text-xs text-gray-600 font-semibold">Expected return</p>
-                      </div>
-                      
+                    </div>
+                    
                       <div className="bg-gradient-to-r from-green-100 to-blue-100 p-3 rounded-lg border border-green-200">
                         <div className="flex justify-between items-center">
                           <span className="font-semibold text-gray-700 text-xs">🔥 ROI:</span>
                           <span className="font-bold text-green-600 text-lg">
-                            {(((pkg.return_amount - pkg.investment_amount) / pkg.investment_amount) * 100).toFixed(0)}%
-                          </span>
-                        </div>
+                          {(((pkg.return_amount - pkg.investment_amount) / pkg.investment_amount) * 100).toFixed(0)}%
+                        </span>
                       </div>
+                    </div>
 
-                      <Button 
+                    <Button 
                         className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 py-2 text-sm font-semibold" 
                         onClick={() => handleInvestment(pkg.id, pkg.investment_amount)}
                         disabled={isLoading}
@@ -727,15 +727,15 @@ const Dashboard = () => {
 
                       <Button 
                         className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 py-2 text-sm font-semibold" 
-                        onClick={() => handleInvestment(pkg.id, pkg.investment_amount)}
-                        disabled={isLoading}
-                      >
+                      onClick={() => handleInvestment(pkg.id, pkg.investment_amount)}
+                      disabled={isLoading}
+                    >
                         <CreditCard className="h-4 h-4 mr-1" />
                         🚀 Invest Now 🚀
-                      </Button>
-                    </CardContent>
-                  </Card>
-                ))}
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
               </div>
             </div>
           </TabsContent>
@@ -753,33 +753,33 @@ const Dashboard = () => {
                   {transactions.length > 0 ? (
                     transactions.map((transaction) => (
                       <div key={transaction.id} className="flex items-center justify-between p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-all duration-300">
-                        <div className="flex-1">
+                      <div className="flex-1">
                           <p className="font-semibold text-gray-900">{transaction.description}</p>
                           <p className="text-sm text-gray-500 mt-1">
-                            {new Date(transaction.created_at).toLocaleString()}
-                          </p>
+                          {new Date(transaction.created_at).toLocaleString()}
+                        </p>
                           <Badge className="mt-2" variant={
-                            transaction.type === 'investment' ? 'default' :
-                            transaction.type === 'gain' ? 'secondary' :
-                            transaction.type === 'deposit' ? 'outline' : 'destructive'
-                          }>
+                          transaction.type === 'investment' ? 'default' :
+                          transaction.type === 'gain' ? 'secondary' :
+                          transaction.type === 'deposit' ? 'outline' : 'destructive'
+                        }>
                             {transaction.type === 'investment' ? 'Investment' :
                              transaction.type === 'gain' ? 'Gain' :
                              transaction.type === 'deposit' ? 'Deposit' : transaction.type}
-                          </Badge>
-                        </div>
-                        <div className="text-right">
+                        </Badge>
+                      </div>
+                      <div className="text-right">
                           <p className="font-bold text-lg">
-                            {transaction.type === 'gain' || transaction.type === 'deposit' ? '+' : '-'}
+                          {transaction.type === 'gain' || transaction.type === 'deposit' ? '+' : '-'}
                             ${transaction.amount.toLocaleString()}
-                          </p>
-                          <Badge variant={
-                            transaction.status === 'completed' ? 'default' : 
-                            transaction.status === 'pending' ? 'secondary' : 'destructive'
+                        </p>
+                        <Badge variant={
+                          transaction.status === 'completed' ? 'default' : 
+                          transaction.status === 'pending' ? 'secondary' : 'destructive'
                           } className="mt-1">
                             {transaction.status === 'completed' ? 'Completed' : 
                              transaction.status === 'pending' ? 'Pending' : 'Cancelled'}
-                          </Badge>
+                        </Badge>
                         </div>
                       </div>
                     ))

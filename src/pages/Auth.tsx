@@ -75,10 +75,10 @@ const Auth = () => {
               <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
                 <DollarSign className="w-7 h-7 text-white" />
               </div>
-              <div>
+            <div>
                 <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   HAbbyforexAcademy
-                </h1>
+              </h1>
                 <p className="text-gray-600 font-medium">Professional Forex Academy</p>
               </div>
             </div>
@@ -135,7 +135,7 @@ const Auth = () => {
               </div>
             </div>
           </div>
-
+          
           {/* Language Selector */}
           <div className="flex justify-start">
             <Button
@@ -166,160 +166,160 @@ const Auth = () => {
             </CardHeader>
 
             <CardContent>
-              <Tabs defaultValue="login" className="w-full">
+          <Tabs defaultValue="login" className="w-full">
                 <TabsList className="grid w-full grid-cols-2 bg-gray-100 p-1 rounded-xl mb-6">
                   <TabsTrigger 
                     value="login" 
                     className="data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm transition-all duration-300 rounded-lg"
                   >
-                    <LogIn className="w-4 h-4 mr-2" />
+                <LogIn className="w-4 h-4 mr-2" />
                     Sign In
-                  </TabsTrigger>
+              </TabsTrigger>
                   <TabsTrigger 
                     value="signup" 
                     className="data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm transition-all duration-300 rounded-lg"
                   >
-                    <UserPlus className="w-4 h-4 mr-2" />
+                <UserPlus className="w-4 h-4 mr-2" />
                     Sign Up
-                  </TabsTrigger>
-                </TabsList>
-
+              </TabsTrigger>
+            </TabsList>
+            
                 <TabsContent value="login" className="space-y-4">
-                  <form onSubmit={handleLogin} className="space-y-4">
-                    <div className="space-y-2">
+                <form onSubmit={handleLogin} className="space-y-4">
+                  <div className="space-y-2">
                       <Label htmlFor="login-email" className="text-sm font-medium text-gray-700">
                         Email Address
-                      </Label>
+                    </Label>
                       <div className="relative">
                         <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                        <Input
-                          id="login-email"
-                          type="email"
+                    <Input
+                      id="login-email"
+                      type="email"
                           placeholder="Enter your email"
-                          value={loginEmail}
-                          onChange={(e) => setLoginEmail(e.target.value)}
+                      value={loginEmail}
+                      onChange={(e) => setLoginEmail(e.target.value)}
                           className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
-                          required
-                        />
-                      </div>
+                      required
+                    />
+                  </div>
                     </div>
                     
-                    <div className="space-y-2">
+                  <div className="space-y-2">
                       <Label htmlFor="login-password" className="text-sm font-medium text-gray-700">
                         Password
-                      </Label>
+                    </Label>
                       <div className="relative">
                         <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                        <Input
-                          id="login-password"
-                          type="password"
+                    <Input
+                      id="login-password"
+                      type="password"
                           placeholder="Enter your password"
-                          value={loginPassword}
-                          onChange={(e) => setLoginPassword(e.target.value)}
+                      value={loginPassword}
+                      onChange={(e) => setLoginPassword(e.target.value)}
                           className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
-                          required
-                        />
-                      </div>
+                      required
+                    />
+                  </div>
                     </div>
 
-                    <Button 
-                      type="submit" 
+                  <Button 
+                    type="submit" 
                       className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                      disabled={isLoading}
-                    >
-                      {isLoading ? (
-                        <div className="flex items-center gap-2">
+                    disabled={isLoading}
+                  >
+                    {isLoading ? (
+                      <div className="flex items-center gap-2">
                           <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                           Signing In...
-                        </div>
-                      ) : (
+                      </div>
+                    ) : (
                         <div className="flex items-center gap-2">
                           <LogIn className="w-5 h-5" />
                           Sign In
                           <ArrowRight className="w-4 h-4" />
                         </div>
-                      )}
-                    </Button>
-                  </form>
-                </TabsContent>
-
+                    )}
+                  </Button>
+                </form>
+            </TabsContent>
+            
                 <TabsContent value="signup" className="space-y-4">
-                  <form onSubmit={handleSignup} className="space-y-4">
-                    <div className="space-y-2">
+                <form onSubmit={handleSignup} className="space-y-4">
+                  <div className="space-y-2">
                       <Label htmlFor="signup-name" className="text-sm font-medium text-gray-700">
                         Full Name
-                      </Label>
+                    </Label>
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                        <Input
-                          id="signup-name"
-                          type="text"
+                    <Input
+                      id="signup-name"
+                      type="text"
                           placeholder="Enter your full name"
-                          value={signupFullName}
-                          onChange={(e) => setSignupFullName(e.target.value)}
+                      value={signupFullName}
+                      onChange={(e) => setSignupFullName(e.target.value)}
                           className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
-                          required
-                        />
-                      </div>
+                      required
+                    />
+                  </div>
                     </div>
 
-                    <div className="space-y-2">
+                  <div className="space-y-2">
                       <Label htmlFor="signup-email" className="text-sm font-medium text-gray-700">
                         Email Address
-                      </Label>
+                    </Label>
                       <div className="relative">
                         <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                        <Input
-                          id="signup-email"
-                          type="email"
+                    <Input
+                      id="signup-email"
+                      type="email"
                           placeholder="Enter your email"
-                          value={signupEmail}
-                          onChange={(e) => setSignupEmail(e.target.value)}
+                      value={signupEmail}
+                      onChange={(e) => setSignupEmail(e.target.value)}
                           className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
-                          required
-                        />
-                      </div>
+                      required
+                    />
+                  </div>
                     </div>
                     
-                    <div className="space-y-2">
+                  <div className="space-y-2">
                       <Label htmlFor="signup-password" className="text-sm font-medium text-gray-700">
                         Password
-                      </Label>
+                    </Label>
                       <div className="relative">
                         <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                        <Input
-                          id="signup-password"
-                          type="password"
+                    <Input
+                      id="signup-password"
+                      type="password"
                           placeholder="Create a password"
-                          value={signupPassword}
-                          onChange={(e) => setSignupPassword(e.target.value)}
+                      value={signupPassword}
+                      onChange={(e) => setSignupPassword(e.target.value)}
                           className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
-                          required
-                        />
-                      </div>
+                      required
+                    />
+                  </div>
                     </div>
 
-                    <Button 
-                      type="submit" 
+                  <Button 
+                    type="submit" 
                       className="w-full bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                      disabled={isLoading}
-                    >
-                      {isLoading ? (
-                        <div className="flex items-center gap-2">
+                    disabled={isLoading}
+                  >
+                    {isLoading ? (
+                      <div className="flex items-center gap-2">
                           <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                           Creating Account...
-                        </div>
-                      ) : (
+                      </div>
+                    ) : (
                         <div className="flex items-center gap-2">
                           <UserPlus className="w-5 h-5" />
                           Create Account
                           <ArrowRight className="w-4 h-4" />
                         </div>
-                      )}
-                    </Button>
-                  </form>
-                </TabsContent>
-              </Tabs>
+                    )}
+                  </Button>
+                </form>
+            </TabsContent>
+          </Tabs>
 
               {/* Additional Info */}
               <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-200">
@@ -332,7 +332,7 @@ const Auth = () => {
                     <p className="text-xs text-gray-600">Your data is encrypted and secure</p>
                   </div>
                 </div>
-              </div>
+          </div>
             </CardContent>
           </Card>
         </div>
