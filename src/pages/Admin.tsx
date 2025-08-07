@@ -261,7 +261,7 @@ const Admin = () => {
               <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 Admin Panel
               </span>
-              <div className="text-sm text-muted-foreground">ForexPro Management</div>
+              <div className="text-sm text-muted-foreground">HAbbyforexAcademy Management</div>
             </div>
             <CoinAnimation size="sm" className="ml-2" />
           </div>

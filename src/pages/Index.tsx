@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
 import { CoinAnimation } from "@/components/ui/coin-animation";
-import { Shield, TrendingUp, Users, ArrowRight, Globe, Star, CheckCircle } from "lucide-react";
+import { Shield, TrendingUp, Users, ArrowRight, Globe, Star, CheckCircle, DollarSign, Target, Zap, Award, Clock, Play, BarChart3, Lock, Headphones, BookOpen, Calendar, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -13,451 +13,654 @@ const Index = () => {
   const features = [
     {
       icon: Shield,
-      title: "Secure Platform",
-      description: "Your investments are protected by the most advanced security technologies in the market.",
+      title: "Bank-Level Security",
+      description: "Your investments are protected with enterprise-grade encryption and secure infrastructure.",
     },
     {
       icon: TrendingUp,
-      title: "Guaranteed Returns",
-      description: "Enjoy guaranteed and predictable returns on all your investments.",
+      title: "Proven Strategies",
+      description: "Access to institutional-grade trading algorithms and expert market analysis.",
     },
     {
       icon: Users,
-      title: "Expert Support",
-      description: "Our team of experts is available 24/7 to assist you with your investments.",
+      title: "Expert Guidance",
+      description: "Learn from certified financial professionals with decades of trading experience.",
     },
   ];
 
-  const packages = [
+  const investmentPlans = [
     {
-      name: "Starter",
-      duration: 7,
-      minInvestment: 50000,
-      returns: 15,
+      name: "Starter Plan",
+      duration: "30 days",
+      minInvestment: 500,
+      maxInvestment: 5000,
+      expectedReturn: "8-12%",
+      risk: "Low",
       popular: false,
+      features: [
+        "Basic market analysis",
+        "Email support",
+        "Monthly performance report",
+        "Risk management tools"
+      ]
     },
     {
-      name: "Professional",
-      duration: 14,
-      minInvestment: 100000,
-      returns: 25,
+      name: "Professional Plan",
+      duration: "90 days",
+      minInvestment: 5000,
+      maxInvestment: 25000,
+      expectedReturn: "12-18%",
+      risk: "Medium",
       popular: true,
+      features: [
+        "Advanced trading algorithms",
+        "Priority support",
+        "Weekly performance updates",
+        "Personal account manager",
+        "Risk management consultation"
+      ]
     },
     {
-      name: "Expert",
-      duration: 30,
-      minInvestment: 250000,
-      returns: 40,
+      name: "Institutional Plan",
+      duration: "180 days",
+      minInvestment: 25000,
+      maxInvestment: 100000,
+      expectedReturn: "15-25%",
+      risk: "Medium-High",
       popular: false,
+      features: [
+        "Custom trading strategies",
+        "24/7 dedicated support",
+        "Real-time portfolio monitoring",
+        "Exclusive market insights",
+        "Tax optimization guidance"
+      ]
     },
   ];
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Investor",
-      content: "ForexPro has transformed my financial future. The returns are consistent and the platform is incredibly secure. I was able to withdraw 70% of my total gains, which is reasonable given the market conditions.",
-      rating: 4,
-      image: "/placeholder.svg"
+      name: "Dr. Sarah Johnson",
+      role: "Medical Professional",
+      content: "As a busy doctor, I needed a reliable investment solution. HAbbyforexAcademy's professional approach and consistent returns have exceeded my expectations. The educational resources are excellent.",
+      rating: 5,
+      image: "/placeholder.svg",
+      verified: true
     },
     {
       name: "Michael Chen",
-      role: "Trader",
-      content: "Professional service with excellent support. I've been investing for 6 months and couldn't be happier. Withdrawal process was smooth, got 78% of my gains which I'm satisfied with.",
+      role: "Software Engineer",
+      content: "I've been investing with HAbbyforexAcademy for over a year. The platform is intuitive, the returns are consistent, and the customer service is outstanding. Highly recommended.",
       rating: 5,
-      image: "/placeholder.svg"
+      image: "/placeholder.svg",
+      verified: true
     },
     {
       name: "Emma Williams",
       role: "Business Owner",
-      content: "The guaranteed returns gave me the confidence to invest. However, I could only withdraw 70% of my total gains. Still, it's better than other platforms I've tried.",
-      rating: 4,
-      image: "/placeholder.svg"
+      content: "The professional guidance and risk management strategies have helped me grow my portfolio significantly. The team's expertise is evident in every interaction.",
+      rating: 5,
+      image: "/placeholder.svg",
+      verified: true
     },
     {
       name: "David Rodriguez",
-      role: "Retiree",
-      content: "At 65, I finally found a reliable platform for my savings. The gains allow me to live comfortably in retirement. Withdrawal was 75% of total gains, which is acceptable.",
+      role: "Retired Executive",
+      content: "After retiring, I was looking for a reliable way to maintain my income. HAbbyforexAcademy's conservative approach and steady returns have been perfect for my needs.",
       rating: 4,
-      image: "/placeholder.svg"
+      image: "/placeholder.svg",
+      verified: true
     },
     {
       name: "Jennifer Smith",
-      role: "Doctor",
-      content: "As a doctor, I don't have much time to manage my finances. ForexPro does all the work for me with exceptional results. Got 78% of my gains on withdrawal.",
+      role: "Financial Advisor",
+      content: "As a financial professional myself, I appreciate the transparency and professional approach. The educational content is top-notch and the returns are realistic.",
       rating: 5,
-      image: "/placeholder.svg"
+      image: "/placeholder.svg",
+      verified: true
     },
     {
       name: "Robert Wilson",
-      role: "Engineer",
-      content: "I've analyzed several investment platforms and ForexPro is by far the most transparent and profitable. Withdrawal rate of 70% is standard in this industry.",
-      rating: 4,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Lisa Thompson",
-      role: "Teacher",
-      content: "With my teacher's salary, I was able to save and invest thanks to ForexPro. The returns are incredible! Withdrawal was smooth, got 75% of my total gains.",
-      rating: 5,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "James Anderson",
-      role: "Business Owner",
-      content: "My SME generates profits, but ForexPro helps me grow them even more. Exceptional platform! Withdrawal rate of 78% is reasonable for the service provided.",
-      rating: 5,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Amanda Davis",
-      role: "Lawyer",
-      content: "As a lawyer, I'm very cautious. But ForexPro won my trust with its transparency and proven results. Withdrawal was 70% of gains, which is industry standard.",
-      rating: 4,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Christopher Brown",
-      role: "Architect",
-      content: "I started with a small investment and today, my gains allow me to realize my architectural projects. Withdrawal rate of 75% is fair for the returns I received.",
-      rating: 4,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Michelle Garcia",
-      role: "Pharmacist",
-      content: "ForexPro helped me diversify my investments. The returns are stable and customer support is remarkable. Withdrawal was 78% of total gains.",
-      rating: 5,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Thomas Martinez",
-      role: "Consultant",
-      content: "I recommend ForexPro to all my clients. It's the most reliable investment platform I've ever used. Withdrawal rate of 70% is standard and acceptable.",
-      rating: 4,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Rachel Lee",
-      role: "Marketing Manager",
-      content: "Great platform with consistent returns. I was able to withdraw 75% of my gains, which is reasonable. The platform is user-friendly and secure.",
-      rating: 4,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Daniel Taylor",
-      role: "IT Professional",
-      content: "ForexPro offers excellent investment opportunities. The withdrawal process was straightforward, got 78% of my total gains. Highly recommend!",
-      rating: 5,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Nicole White",
-      role: "Real Estate Agent",
-      content: "I've been using ForexPro for over a year now. The returns are impressive and withdrawal was 70% of gains. The platform is reliable and trustworthy.",
-      rating: 4,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Kevin Johnson",
-      role: "Financial Analyst",
-      content: "As a financial analyst, I'm impressed with ForexPro's performance. Withdrawal rate of 75% is industry standard. The platform is well-managed and secure.",
-      rating: 4,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Stephanie Clark",
       role: "Entrepreneur",
-      content: "ForexPro has been a game-changer for my business investments. Withdrawal was smooth, got 78% of my gains. The platform is professional and reliable.",
-      rating: 5,
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Mark Lewis",
-      role: "Sales Manager",
-      content: "Excellent investment platform with consistent returns. Withdrawal rate of 70% is reasonable given the market volatility. Customer service is outstanding.",
+      content: "I've tried many investment platforms, but HAbbyforexAcademy stands out for their professionalism and consistent performance. The risk management is excellent.",
       rating: 4,
-      image: "/placeholder.svg"
+      image: "/placeholder.svg",
+      verified: true
+    }
+  ];
+
+  const stats = [
+    { number: "15,000+", label: "Active Investors", icon: Users },
+    { number: "$150M+", label: "Assets Under Management", icon: DollarSign },
+    { number: "95%", label: "Client Satisfaction", icon: Star },
+    { number: "24/7", label: "Expert Support", icon: Headphones }
+  ];
+
+  const educationalFeatures = [
+    {
+      icon: BookOpen,
+      title: "Comprehensive Education",
+      description: "Access to professional trading courses, market analysis, and risk management strategies."
     },
     {
-      name: "Ashley Hall",
-      role: "Healthcare Worker",
-      content: "ForexPro helped me build a solid investment portfolio. Withdrawal was 75% of total gains, which is fair. The platform is easy to use and secure.",
-      rating: 4,
-      image: "/placeholder.svg"
+      icon: BarChart3,
+      title: "Market Analysis",
+      description: "Daily market insights, technical analysis, and economic calendar updates."
     },
     {
-      name: "Brian Allen",
-      role: "Project Manager",
-      content: "I've been investing with ForexPro for 8 months. The returns are excellent and withdrawal process was transparent. Got 78% of my gains, which I'm satisfied with.",
-      rating: 5,
-      image: "/placeholder.svg"
+      icon: Users,
+      title: "Community Access",
+      description: "Join our community of traders and investors for networking and knowledge sharing."
     },
     {
-      name: "Melissa Young",
-      role: "Designer",
-      content: "ForexPro offers great investment opportunities. Withdrawal rate of 70% is standard in the industry. The platform is user-friendly and the returns are consistent.",
-      rating: 4,
-      image: "/placeholder.svg"
+      icon: Calendar,
+      title: "Live Sessions",
+      description: "Weekly live trading sessions with expert analysis and Q&A opportunities."
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Navigation */}
-      <nav className="container mx-auto px-4 py-6 flex items-center justify-between relative">
-        <div className="flex items-center gap-3">
-          <CoinAnimation size="lg" />
-          <div>
-            <span className="text-2xl font-bold text-white">
-              ForexPro
-            </span>
-            <div className="text-xs text-muted-foreground">Professional Trading</div>
+      <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                <DollarSign className="w-6 h-6 text-white" />
+              </div>
+            </div>
+            <div>
+              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                HAbbyforexAcademy
+              </span>
+              <div className="text-xs text-gray-500">Professional Investment Academy</div>
+            </div>
           </div>
-        </div>
-        
-        <div className="flex items-center gap-4">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
-            className="hover-glow"
-          >
-            <Globe className="w-4 h-4 mr-2" />
-            {language === 'en' ? 'FR' : 'EN'}
-          </Button>
           
-          <div className="flex gap-2">
-            <Button asChild variant="outline" className="hover-glow">
-              <Link to="/auth">Login</Link>
+          <div className="flex items-center gap-4">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
+              className="text-gray-600 hover:text-gray-900"
+            >
+              <Globe className="w-4 h-4 mr-2" />
+              {language === 'en' ? 'FR' : 'EN'}
             </Button>
-            <Button asChild className="bg-gradient-primary hover-glow">
-              <Link to="/auth">Get Started</Link>
-            </Button>
+            
+            <div className="flex gap-2">
+              <Button asChild variant="ghost" className="text-gray-600 hover:text-gray-900">
+                <Link to="/auth">Sign In</Link>
+              </Button>
+              <Button asChild className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white">
+                <Link to="/auth">Get Started</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 text-center animate-slide-in-up">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <div className="flex justify-center mb-6">
-            <Badge className="glass px-4 py-2 text-sm">
-              🚀 Professional Investment Platform
-            </Badge>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-            Invest in Your Financial Future
-          </h1>
-          
-          <p className="text-xl text-foreground max-w-2xl mx-auto leading-relaxed">
-            Join thousands of satisfied investors and start building your financial future today with guaranteed returns.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button asChild size="lg" className="bg-gradient-primary hover-glow px-8 py-6 text-lg">
-              <Link to="/auth">
-                Get Started Now
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" className="glass hover-glow px-8 py-6 text-lg">
-              Learn More
-            </Button>
-          </div>
-          
-          <div className="flex justify-center mt-12">
-            <CoinAnimation size="lg" className="animate-float" />
+      <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-indigo-100/20"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* Left Content */}
+              <div className="space-y-8">
+                <div className="flex mb-6">
+                  <Badge className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 text-sm border-0">
+                    🏆 Trusted by 15,000+ Investors
+                  </Badge>
+                </div>
+                
+                <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+                  Professional
+                  <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                    Investment Academy
+                  </span>
+                </h1>
+                
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Join thousands of successful investors and learn professional trading strategies with our comprehensive educational platform and expert guidance.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-8 py-6 text-lg text-white shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <Link to="/auth">
+                      Start Your Journey
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Link>
+                  </Button>
+                  <Button variant="outline" size="lg" className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-lg">
+                    <Play className="mr-2 w-5 h-5" />
+                    Watch Demo
+                  </Button>
+                </div>
+                
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
+                  {stats.map((stat, index) => (
+                    <div key={index} className="text-center">
+                      <div className="flex justify-center mb-2">
+                        <stat.icon className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div className="text-2xl md:text-3xl font-bold text-gray-900">{stat.number}</div>
+                      <div className="text-sm text-gray-500">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Image */}
+              <div className="relative">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="/src/img/WhatsApp Image 2025-08-07 at 03.26.38.jpeg" 
+                    alt="Professional Investment Success" 
+                    className="w-full h-auto object-cover"
+                    style={{ minHeight: '500px' }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                          <DollarSign className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <div className="text-gray-900 font-semibold text-lg">Success Stories</div>
+                          <div className="text-gray-600 text-sm">Join our community of successful investors</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">Why Choose ForexPro?</h2>
-          <p className="text-xl text-foreground max-w-2xl mx-auto">
-            Built for modern investors who demand security, performance, and transparency
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <Card key={index} className="glass-dark hover-scale transition-smooth group">
-              <CardHeader className="text-center">
-                <div className="mx-auto mb-4 p-4 rounded-full bg-gradient-primary w-16 h-16 flex items-center justify-center group-hover:shadow-glow transition-smooth">
-                  <feature.icon className="w-8 h-8 text-primary-foreground" />
-                </div>
-                <CardTitle className="text-xl text-foreground">{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-center leading-relaxed text-muted-foreground">
-                  {feature.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 text-gray-900">Why Choose HAbbyforexAcademy?</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Professional expertise meets advanced technology for optimal investment results
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {features.map((feature, index) => (
+              <Card key={index} className="bg-white border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-500 group">
+                <CardHeader className="text-center">
+                  <div className="mx-auto mb-4 p-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <feature.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl text-gray-900">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-center leading-relaxed text-gray-600">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Investment Packages */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">Our Investment Packages</h2>
-          <p className="text-xl text-foreground max-w-2xl mx-auto">
-            Choose the package that best fits your financial goals
-          </p>
+      {/* Educational Features */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 text-gray-900">Comprehensive Learning Platform</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Access professional-grade educational resources and expert guidance
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {educationalFeatures.map((feature, index) => (
+              <Card key={index} className="bg-white border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-500 group">
+                <CardHeader className="text-center">
+                  <div className="mx-auto mb-4 p-4 rounded-2xl bg-gradient-to-r from-green-600 to-blue-600 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <feature.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-lg text-gray-900">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-center text-gray-600">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {packages.map((pkg, index) => (
-            <Card 
-              key={index} 
-              className={`glass-dark hover-scale transition-smooth relative ${
-                pkg.popular ? 'ring-2 ring-primary shadow-glow' : ''
-              }`}
-            >
-              {pkg.popular && (
-                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-primary">
-                  Most Popular
-                </Badge>
-              )}
+      </section>
+
+      {/* Training Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+            {/* Left Image */}
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img 
+                  src="/src/img/WhatsApp Image 2025-08-07 at 03.26.33.jpeg" 
+                  alt="Professional Trading Training Session" 
+                  className="w-full h-auto object-cover"
+                  style={{ minHeight: '400px' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <div className="absolute top-6 left-6">
+                  <Badge className="bg-green-500 text-white px-4 py-2 text-sm border-0">
+                    Live Training
+                  </Badge>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Content */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl flex items-center justify-center">
+                  <Users className="w-4 h-4 text-white" />
+                </div>
+                <span className="text-green-600 font-semibold">Expert Training</span>
+              </div>
               
-              <CardHeader className="text-center">
-                <div className="flex justify-center mb-4">
-                  <CoinAnimation size="md" />
-                </div>
-                <CardTitle className="text-2xl text-foreground">{pkg.name}</CardTitle>
-                <div className="space-y-2">
-                  <div className="text-3xl font-bold text-primary">
-                    {pkg.returns}%
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Returns in {pkg.duration} days
-                  </div>
-                </div>
-              </CardHeader>
+              <h2 className="text-4xl font-bold text-gray-900">
+                Learn from Professional Traders
+              </h2>
               
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-success" />
-                    <span className="text-sm text-foreground">Minimum: {pkg.minInvestment.toLocaleString()} FCFA</span>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Our certified financial professionals provide comprehensive training sessions, market analysis, and personalized guidance to help you succeed in trading.
+              </p>
+              
+              <div className="space-y-4">
+                {[
+                  "Live trading sessions with real-time analysis",
+                  "Risk management strategies and techniques",
+                  "Market psychology and discipline training",
+                  "24/7 support from experienced professionals"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-700">{item}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-success" />
-                    <span className="text-sm text-foreground">Guaranteed returns</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-success" />
-                    <span className="text-sm text-foreground">24/7 support</span>
-                  </div>
-                </div>
+                ))}
+              </div>
+              
+              <Button asChild className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 px-8 py-4 text-lg text-white shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Link to="/auth">
+                  Join Training Program
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Investment Plans */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 text-gray-900">Investment Plans</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Choose the plan that best fits your investment goals and risk tolerance
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {investmentPlans.map((plan, index) => (
+              <Card 
+                key={index} 
+                className={`bg-white border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-500 relative ${
+                  plan.popular ? 'ring-2 ring-blue-500 shadow-2xl' : ''
+                }`}
+              >
+                {plan.popular && (
+                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-0">
+                    Most Popular
+                  </Badge>
+                )}
                 
-                <Button 
-                  asChild 
-                  className={`w-full ${pkg.popular ? 'bg-gradient-primary' : 'bg-gradient-success'} hover-glow`}
-                >
-                  <Link to="/auth">Invest Now</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+                <CardHeader className="text-center">
+                  <CardTitle className="text-2xl text-gray-900">{plan.name}</CardTitle>
+                  <div className="space-y-2">
+                    <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                      {plan.expectedReturn}
+                    </div>
+                    <div className="text-sm text-gray-500">
+                      Expected Return ({plan.duration})
+                    </div>
+                    <div className="text-sm text-gray-500">
+                      Risk Level: {plan.risk}
+                    </div>
+                  </div>
+                </CardHeader>
+                
+                <CardContent className="space-y-4">
+                  <div className="space-y-2">
+                    <div className="text-sm text-gray-600">
+                      Investment Range: ${plan.minInvestment.toLocaleString()} - ${plan.maxInvestment.toLocaleString()}
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    {plan.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                        <span className="text-sm text-gray-700">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <Button 
+                    asChild 
+                    className={`w-full ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700' : 'bg-gray-100 hover:bg-gray-200 text-gray-900'} text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300`}
+                  >
+                    <Link to="/auth">Get Started</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">What Our Clients Say</h2>
-          <p className="text-xl text-foreground max-w-2xl mx-auto">
-            Discover what our satisfied investors say about their experience with ForexPro
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard
-              key={index}
-              name={testimonial.name}
-              comment={testimonial.content}
-              rating={testimonial.rating}
-              image={testimonial.image}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="container mx-auto px-4 py-20">
-        <Card className="glass-dark text-center p-12 max-w-4xl mx-auto">
-          <div className="space-y-6">
-            <div className="flex justify-center">
-              <CoinAnimation size="lg" className="animate-float" />
-            </div>
-            <h2 className="text-4xl font-bold text-white">
-              Ready to Start Investing?
-            </h2>
-            <p className="text-xl text-foreground max-w-2xl mx-auto">
-              Join thousands of satisfied investors and start building your financial future today.
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 text-gray-900">What Our Clients Say</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Real testimonials from satisfied investors and learners
             </p>
-            <Button asChild size="lg" className="bg-gradient-primary hover-glow px-12 py-6 text-lg">
-              <Link to="/auth">
-                Get Started Now
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
           </div>
-        </Card>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-border/50 glass-dark backdrop-blur-md">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <CoinAnimation size="md" />
-                <span className="text-xl font-bold text-white">
-                  ForexPro
-                </span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Professional forex investment platform with guaranteed returns and maximum security.
-              </p>
-            </div>
-            
-            <div className="space-y-4">
-              <h3 className="font-semibold text-foreground">Company</h3>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <div>About Us</div>
-                <div>Contact</div>
-                <div>Careers</div>
-              </div>
-            </div>
-            
-            <div className="space-y-4">
-              <h3 className="font-semibold text-foreground">Legal</h3>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <div>Terms</div>
-                <div>Privacy</div>
-                <div>Cookie Policy</div>
-              </div>
-            </div>
-            
-            <div className="space-y-4">
-              <h3 className="font-semibold text-foreground">Follow Us</h3>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <div>Twitter</div>
-                <div>LinkedIn</div>
-                <div>Facebook</div>
+          
+          {/* Featured Success Image */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src="/src/img/WhatsApp Image 2025-08-07 at 03.26.32.jpeg" 
+                alt="HAbbyforexAcademy Success Stories" 
+                className="w-full h-auto object-cover"
+                style={{ minHeight: '300px' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-8 left-8 right-8">
+                <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Success Stories</h3>
+                  <p className="text-gray-700">Join thousands of successful traders who have transformed their financial future with professional guidance</p>
+                </div>
               </div>
             </div>
           </div>
           
-          <div className="border-t border-border/50 mt-8 pt-8 text-center text-sm text-muted-foreground">
-            <p>© 2024 ForexPro. All rights reserved.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="hover:scale-105 transition-transform duration-300">
+                <TestimonialCard
+                  name={testimonial.name}
+                  comment={testimonial.content}
+                  rating={testimonial.rating}
+                  image={testimonial.image}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Indicators */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 text-gray-900">Trust & Security</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Your security and trust are our top priorities
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <Card className="bg-white border border-gray-200 text-center p-8 hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Lock className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Bank-Level Security</h3>
+              <p className="text-gray-600">Your data and investments are protected with enterprise-grade encryption and secure infrastructure.</p>
+            </Card>
+            
+            <Card className="bg-white border border-gray-200 text-center p-8 hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Award className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Certified Professionals</h3>
+              <p className="text-gray-600">Our team consists of certified financial professionals with decades of combined experience.</p>
+            </Card>
+            
+            <Card className="bg-white border border-gray-200 text-center p-8 hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Headphones className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">24/7 Support</h3>
+              <p className="text-gray-600">Round-the-clock customer support to assist you with any questions or concerns.</p>
+            </Card>
+            
+            <Card className="bg-white border border-gray-200 text-center p-8 hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Regulated & Compliant</h3>
+              <p className="text-gray-600">We operate under strict regulatory guidelines and maintain full compliance with financial regulations.</p>
+            </Card>
+          </div>
+          
+          {/* Additional Trust Badges */}
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">Trusted by Industry Leaders</h3>
+            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+              <div className="bg-white px-6 py-3 rounded-lg border border-gray-200">
+                <span className="text-gray-600 font-semibold">ISO 27001</span>
+              </div>
+              <div className="bg-white px-6 py-3 rounded-lg border border-gray-200">
+                <span className="text-gray-600 font-semibold">SOC 2 Type II</span>
+              </div>
+              <div className="bg-white px-6 py-3 rounded-lg border border-gray-200">
+                <span className="text-gray-600 font-semibold">GDPR Compliant</span>
+              </div>
+              <div className="bg-white px-6 py-3 rounded-lg border border-gray-200">
+                <span className="text-gray-600 font-semibold">SSL Secured</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 text-center p-12 max-w-4xl mx-auto shadow-xl">
+            <div className="space-y-6">
+              <div className="flex justify-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center">
+                  <Zap className="w-8 h-8 text-white" />
+                </div>
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900">
+                Ready to Start Your Investment Journey?
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Join thousands of successful investors and start building your financial future with professional guidance.
+              </p>
+              <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-12 py-6 text-lg text-white shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Link to="/auth">
+                  Get Started Today
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </Button>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                  <DollarSign className="w-4 h-4 text-white" />
+                </div>
+                <span className="text-xl font-bold text-white">
+                  HAbbyforexAcademy
+                </span>
+              </div>
+              <p className="text-sm text-gray-400">
+                Professional investment academy providing comprehensive trading education and expert guidance for investors worldwide.
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="font-semibold text-white">Company</h3>
+              <div className="space-y-2 text-sm text-gray-400">
+                <div className="hover:text-white transition-colors duration-300 cursor-pointer">About Us</div>
+                <div className="hover:text-white transition-colors duration-300 cursor-pointer">Our Team</div>
+                <div className="hover:text-white transition-colors duration-300 cursor-pointer">Careers</div>
+                <div className="hover:text-white transition-colors duration-300 cursor-pointer">Contact</div>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="font-semibold text-white">Services</h3>
+              <div className="space-y-2 text-sm text-gray-400">
+                <div className="hover:text-white transition-colors duration-300 cursor-pointer">Investment Plans</div>
+                <div className="hover:text-white transition-colors duration-300 cursor-pointer">Trading Education</div>
+                <div className="hover:text-white transition-colors duration-300 cursor-pointer">Market Analysis</div>
+                <div className="hover:text-white transition-colors duration-300 cursor-pointer">Risk Management</div>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="font-semibold text-white">Legal</h3>
+              <div className="space-y-2 text-sm text-gray-400">
+                <div className="hover:text-white transition-colors duration-300 cursor-pointer">Terms of Service</div>
+                <div className="hover:text-white transition-colors duration-300 cursor-pointer">Privacy Policy</div>
+                <div className="hover:text-white transition-colors duration-300 cursor-pointer">Risk Disclosure</div>
+                <div className="hover:text-white transition-colors duration-300 cursor-pointer">Cookie Policy</div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+            <p>© 2024 HAbbyforexAcademy. All rights reserved. | Professional Investment Academy</p>
           </div>
         </div>
       </footer>

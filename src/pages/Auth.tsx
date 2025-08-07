@@ -8,8 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { CoinAnimation } from "@/components/ui/coin-animation";
-import { LogIn, UserPlus, Mail, Lock, User, Globe } from "lucide-react";
+import { LogIn, UserPlus, Mail, Lock, User, Globe, DollarSign, ArrowRight, Shield, TrendingUp } from "lucide-react";
 
 const Auth = () => {
   const { user, signIn, signUp, loading } = useAuth();
@@ -60,33 +59,90 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-hero flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-4 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-success/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative w-full max-w-md space-y-6 animate-slide-in-up">
-        {/* Header */}
-        <div className="text-center space-y-4">
-          <div className="flex justify-center items-center gap-3">
-            <CoinAnimation size="lg" />
-            <div>
-              <h1 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                ForexPro
-              </h1>
-              <p className="text-sm text-muted-foreground">Professional Forex Investment</p>
+      <div className="relative w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        {/* Left Side - Welcome Content */}
+        <div className="space-y-8 animate-fade-in-left">
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                <DollarSign className="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  HAbbyforexAcademy
+                </h1>
+                <p className="text-gray-600 font-medium">Professional Forex Academy</p>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold text-gray-900">
+                Welcome to Professional Trading
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Join thousands of successful investors and start earning consistent returns with our advanced trading algorithms and expert team.
+              </p>
             </div>
           </div>
-          
+
+          {/* Features */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="flex items-center gap-3 p-4 bg-white/50 backdrop-blur-sm rounded-xl border border-white/20">
+              <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                <Shield className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <p className="font-semibold text-gray-900">Secure Platform</p>
+                <p className="text-sm text-gray-600">Bank-grade security</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-3 p-4 bg-white/50 backdrop-blur-sm rounded-xl border border-white/20">
+              <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                <TrendingUp className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <p className="font-semibold text-gray-900">High Returns</p>
+                <p className="text-sm text-gray-600">Up to 1000% profit</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-3 p-4 bg-white/50 backdrop-blur-sm rounded-xl border border-white/20">
+              <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+                <User className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <p className="font-semibold text-gray-900">Expert Support</p>
+                <p className="text-sm text-gray-600">24/7 assistance</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-3 p-4 bg-white/50 backdrop-blur-sm rounded-xl border border-white/20">
+              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
+                <DollarSign className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <p className="font-semibold text-gray-900">Fast Payouts</p>
+                <p className="text-sm text-gray-600">Quick withdrawals</p>
+              </div>
+            </div>
+          </div>
+
           {/* Language Selector */}
-          <div className="flex justify-center">
+          <div className="flex justify-start">
             <Button
               variant="outline"
               size="sm"
               onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
-              className="glass hover-glow"
+              className="border-gray-300 text-gray-700 hover:bg-gray-50 transition-all duration-300"
             >
               <Globe className="w-4 h-4 mr-2" />
               {language === 'en' ? 'Français' : 'English'}
@@ -94,166 +150,225 @@ const Auth = () => {
           </div>
         </div>
 
-        {/* Auth Card */}
-        <Card className="glass-dark shadow-glow">
-          <Tabs defaultValue="login" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 glass mb-6">
-              <TabsTrigger value="login" className="hover-glow">
-                <LogIn className="w-4 h-4 mr-2" />
-                {t('login')}
-              </TabsTrigger>
-              <TabsTrigger value="signup" className="hover-glow">
-                <UserPlus className="w-4 h-4 mr-2" />
-                {t('signup')}
-              </TabsTrigger>
-            </TabsList>
-            
-            {/* Login Tab */}
-            <TabsContent value="login">
-              <CardHeader className="text-center pb-6">
-                <CardTitle className="text-2xl">Welcome Back</CardTitle>
-                <CardDescription>Sign in to your ForexPro account</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleLogin} className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="login-email" className="flex items-center gap-2">
-                      <Mail className="w-4 h-4" />
-                      Email
-                    </Label>
-                    <Input
-                      id="login-email"
-                      type="email"
-                      placeholder="your@email.com"
-                      value={loginEmail}
-                      onChange={(e) => setLoginEmail(e.target.value)}
-                      required
-                      className="glass transition-smooth focus:shadow-glow"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="login-password" className="flex items-center gap-2">
-                      <Lock className="w-4 h-4" />
-                      Password
-                    </Label>
-                    <Input
-                      id="login-password"
-                      type="password"
-                      placeholder="••••••••"
-                      value={loginPassword}
-                      onChange={(e) => setLoginPassword(e.target.value)}
-                      required
-                      minLength={6}
-                      className="glass transition-smooth focus:shadow-glow"
-                    />
-                  </div>
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-gradient-primary hover-glow transition-smooth"
-                    disabled={isLoading}
-                  >
-                    {isLoading ? (
-                      <div className="flex items-center gap-2">
-                        <CoinAnimation size="sm" />
-                        Signing in...
-                      </div>
-                    ) : (
-                      <>
-                        <LogIn className="w-4 h-4 mr-2" />
-                        Sign In
-                      </>
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </TabsContent>
-            
-            {/* Signup Tab */}
-            <TabsContent value="signup">
-              <CardHeader className="text-center pb-6">
-                <CardTitle className="text-2xl">Create Account</CardTitle>
-                <CardDescription>Join ForexPro and start investing</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSignup} className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="signup-fullname" className="flex items-center gap-2">
-                      <User className="w-4 h-4" />
-                      Full Name
-                    </Label>
-                    <Input
-                      id="signup-fullname"
-                      type="text"
-                      placeholder="Your full name"
-                      value={signupFullName}
-                      onChange={(e) => setSignupFullName(e.target.value)}
-                      required
-                      className="glass transition-smooth focus:shadow-glow"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="signup-email" className="flex items-center gap-2">
-                      <Mail className="w-4 h-4" />
-                      Email
-                    </Label>
-                    <Input
-                      id="signup-email"
-                      type="email"
-                      placeholder="your@email.com"
-                      value={signupEmail}
-                      onChange={(e) => setSignupEmail(e.target.value)}
-                      required
-                      className="glass transition-smooth focus:shadow-glow"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="signup-password" className="flex items-center gap-2">
-                      <Lock className="w-4 h-4" />
-                      Password
-                    </Label>
-                    <Input
-                      id="signup-password"
-                      type="password"
-                      placeholder="••••••••"
-                      value={signupPassword}
-                      onChange={(e) => setSignupPassword(e.target.value)}
-                      required
-                      minLength={6}
-                      className="glass transition-smooth focus:shadow-glow"
-                    />
-                  </div>
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-gradient-success hover-glow transition-smooth"
-                    disabled={isLoading}
-                  >
-                    {isLoading ? (
-                      <div className="flex items-center gap-2">
-                        <CoinAnimation size="sm" />
-                        Creating account...
-                      </div>
-                    ) : (
-                      <>
-                        <UserPlus className="w-4 h-4 mr-2" />
-                        Create Account
-                      </>
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </TabsContent>
-          </Tabs>
-        </Card>
+        {/* Right Side - Auth Card */}
+        <div className="animate-fade-in-right">
+          <Card className="bg-white/80 backdrop-blur-sm border border-white/20 shadow-2xl">
+            <CardHeader className="text-center space-y-4">
+              <div className="mx-auto w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                <User className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <CardTitle className="text-2xl font-bold text-gray-900">Welcome Back</CardTitle>
+                <CardDescription className="text-gray-600">
+                  Sign in to your account or create a new one
+                </CardDescription>
+              </div>
+            </CardHeader>
 
-        {/* Footer */}
-        <div className="text-center text-sm text-muted-foreground">
-          <p>Secure • Professional • Profitable</p>
-          <div className="flex justify-center items-center gap-2 mt-2">
-            <CoinAnimation size="sm" />
-            <span>Start your investment journey today</span>
-          </div>
+            <CardContent>
+              <Tabs defaultValue="login" className="w-full">
+                <TabsList className="grid w-full grid-cols-2 bg-gray-100 p-1 rounded-xl mb-6">
+                  <TabsTrigger 
+                    value="login" 
+                    className="data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm transition-all duration-300 rounded-lg"
+                  >
+                    <LogIn className="w-4 h-4 mr-2" />
+                    Sign In
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="signup" 
+                    className="data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm transition-all duration-300 rounded-lg"
+                  >
+                    <UserPlus className="w-4 h-4 mr-2" />
+                    Sign Up
+                  </TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="login" className="space-y-4">
+                  <form onSubmit={handleLogin} className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="login-email" className="text-sm font-medium text-gray-700">
+                        Email Address
+                      </Label>
+                      <div className="relative">
+                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <Input
+                          id="login-email"
+                          type="email"
+                          placeholder="Enter your email"
+                          value={loginEmail}
+                          onChange={(e) => setLoginEmail(e.target.value)}
+                          className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
+                          required
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="login-password" className="text-sm font-medium text-gray-700">
+                        Password
+                      </Label>
+                      <div className="relative">
+                        <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <Input
+                          id="login-password"
+                          type="password"
+                          placeholder="Enter your password"
+                          value={loginPassword}
+                          onChange={(e) => setLoginPassword(e.target.value)}
+                          className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      disabled={isLoading}
+                    >
+                      {isLoading ? (
+                        <div className="flex items-center gap-2">
+                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                          Signing In...
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-2">
+                          <LogIn className="w-5 h-5" />
+                          Sign In
+                          <ArrowRight className="w-4 h-4" />
+                        </div>
+                      )}
+                    </Button>
+                  </form>
+                </TabsContent>
+
+                <TabsContent value="signup" className="space-y-4">
+                  <form onSubmit={handleSignup} className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="signup-name" className="text-sm font-medium text-gray-700">
+                        Full Name
+                      </Label>
+                      <div className="relative">
+                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <Input
+                          id="signup-name"
+                          type="text"
+                          placeholder="Enter your full name"
+                          value={signupFullName}
+                          onChange={(e) => setSignupFullName(e.target.value)}
+                          className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="signup-email" className="text-sm font-medium text-gray-700">
+                        Email Address
+                      </Label>
+                      <div className="relative">
+                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <Input
+                          id="signup-email"
+                          type="email"
+                          placeholder="Enter your email"
+                          value={signupEmail}
+                          onChange={(e) => setSignupEmail(e.target.value)}
+                          className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
+                          required
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="signup-password" className="text-sm font-medium text-gray-700">
+                        Password
+                      </Label>
+                      <div className="relative">
+                        <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <Input
+                          id="signup-password"
+                          type="password"
+                          placeholder="Create a password"
+                          value={signupPassword}
+                          onChange={(e) => setSignupPassword(e.target.value)}
+                          className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      disabled={isLoading}
+                    >
+                      {isLoading ? (
+                        <div className="flex items-center gap-2">
+                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                          Creating Account...
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-2">
+                          <UserPlus className="w-5 h-5" />
+                          Create Account
+                          <ArrowRight className="w-4 h-4" />
+                        </div>
+                      )}
+                    </Button>
+                  </form>
+                </TabsContent>
+              </Tabs>
+
+              {/* Additional Info */}
+              <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-200">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <Shield className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900">Secure & Protected</p>
+                    <p className="text-xs text-gray-600">Your data is encrypted and secure</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
+
+      <style>{`
+        @keyframes fade-in-left {
+          from {
+            opacity: 0;
+            transform: translateX(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        @keyframes fade-in-right {
+          from {
+            opacity: 0;
+            transform: translateX(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        .animate-fade-in-left {
+          animation: fade-in-left 0.8s ease-out;
+        }
+        
+        .animate-fade-in-right {
+          animation: fade-in-right 0.8s ease-out;
+        }
+      `}</style>
     </div>
   );
 };
