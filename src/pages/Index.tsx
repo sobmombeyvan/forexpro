@@ -345,7 +345,7 @@ const Index = () => {
       {/* Training Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto mb-16">
             {/* Left Image */}
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
@@ -401,6 +401,48 @@ const Index = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
+            </div>
+          </div>
+          
+          {/* Professional Traders Showcase */}
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Meet Our Professional Traders</h3>
+              <p className="text-gray-600">Learn from the best in the industry</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://i.postimg.cc/KjGMSRwm/Whats-App-Image-2025-08-07-at-07-23-54.jpg" 
+                  alt="HAbbyforexAcademy Professional Trader" 
+                  className="w-full h-auto object-cover"
+                  style={{ minHeight: '250px' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 border border-white/20 shadow-xl">
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">Professional Trader</h3>
+                    <p className="text-gray-700 text-sm">Expert-led sessions with proven trading methodologies</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://i.postimg.cc/Kj0gZmhB/Whats-App-Image-2025-08-07-at-07-25-18.jpg" 
+                  alt="HAbbyforexAcademy Professional Trader" 
+                  className="w-full h-auto object-cover"
+                  style={{ minHeight: '250px' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 border border-white/20 shadow-xl">
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">Professional Trader</h3>
+                    <p className="text-gray-700 text-sm">Real results from our comprehensive investment strategies</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -518,6 +560,8 @@ const Index = () => {
               </div>
             </div>
           </div>
+          
+
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
