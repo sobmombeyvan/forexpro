@@ -256,7 +256,7 @@ const Index = () => {
               <div className="relative">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <img 
-                    src="/src/img/WhatsApp Image 2025-08-07 at 03.26.38.jpeg" 
+                    src="https://i.postimg.cc/PJ0RwX5v/Whats-App-Image-2025-08-07-at-03-26-38.jpg" 
                     alt="Professional Investment Success" 
                     className="w-full h-auto object-cover"
                     style={{ minHeight: '500px' }}
@@ -350,7 +350,7 @@ const Index = () => {
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/src/img/WhatsApp Image 2025-08-07 at 03.26.33.jpeg" 
+                  src="https://i.postimg.cc/8kY33Hmk/Whats-App-Image-2025-08-07-at-03-26-33.jpg" 
                   alt="Professional Trading Training Session" 
                   className="w-full h-auto object-cover"
                   style={{ minHeight: '400px' }}
@@ -484,11 +484,11 @@ const Index = () => {
           </p>
         </div>
         
-          {/* Featured Success Image */}
-          <div className="max-w-4xl mx-auto mb-16">
+          {/* Featured Success Images */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src="/src/img/WhatsApp Image 2025-08-07 at 03.26.32.jpeg" 
+                src="https://i.postimg.cc/gk65PZgV/Whats-App-Image-2025-08-07-at-03-26-32.jpg" 
                 alt="HAbbyforexAcademy Success Stories" 
                 className="w-full h-auto object-cover"
                 style={{ minHeight: '300px' }}
@@ -498,6 +498,22 @@ const Index = () => {
                 <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">Success Stories</h3>
                   <p className="text-gray-700">Join thousands of successful traders who have transformed their financial future with professional guidance</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src="https://i.postimg.cc/HxRqQ4SL/Whats-App-Image-2025-08-07-at-05-02-41.jpg" 
+                alt="HAbbyforexAcademy Trading Excellence" 
+                className="w-full h-auto object-cover"
+                style={{ minHeight: '300px' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-8 left-8 right-8">
+                <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Trading Excellence</h3>
+                  <p className="text-gray-700">Professional trading strategies and expert guidance for consistent results</p>
                 </div>
               </div>
             </div>
