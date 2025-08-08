@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { LogIn, UserPlus, Mail, Lock, User, Globe, DollarSign, ArrowRight, Shield, TrendingUp } from "lucide-react";
+import { LogIn, UserPlus, Mail, Lock, User, Globe, DollarSign, ArrowRight, Shield, TrendingUp, AtSign, Phone } from "lucide-react";
 
 const Auth = () => {
   const { user, signIn, signUp, loading } = useAuth();
@@ -25,6 +25,8 @@ const Auth = () => {
   const [signupEmail, setSignupEmail] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
   const [signupFullName, setSignupFullName] = useState("");
+  const [signupUsername, setSignupUsername] = useState("");
+  const [signupPhone, setSignupPhone] = useState("");
 
   // Redirect if already authenticated
   if (user && !loading) {
@@ -58,13 +60,15 @@ const Auth = () => {
     setIsLoading(true);
     
     try {
-      const { error } = await signUp(signupEmail, signupPassword, signupFullName);
+      const { error } = await signUp(signupEmail, signupPassword, signupFullName, signupUsername, signupPhone);
       
       if (!error) {
         // Reset form on successful signup
         setSignupEmail("");
         setSignupPassword("");
         setSignupFullName("");
+        setSignupUsername("");
+        setSignupPhone("");
         setActiveTab("login");
       }
     } catch (error) {
@@ -72,7 +76,7 @@ const Auth = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [signupEmail, signupPassword, signupFullName, signUp, isLoading]);
+  }, [signupEmail, signupPassword, signupFullName, signupUsername, signupPhone, signUp, isLoading]);
 
   const handleTabChange = useCallback((value: string) => {
     setActiveTab(value);
@@ -81,6 +85,8 @@ const Auth = () => {
       setSignupEmail("");
       setSignupPassword("");
       setSignupFullName("");
+      setSignupUsername("");
+      setSignupPhone("");
     } else {
       setLoginEmail("");
       setLoginPassword("");
@@ -300,6 +306,44 @@ const Auth = () => {
                           placeholder="Enter your full name"
                       value={signupFullName}
                       onChange={(e) => setSignupFullName(e.target.value)}
+                          className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
+                      required
+                      disabled={isLoading}
+                    />
+                  </div>
+                    </div>
+
+                  <div className="space-y-2">
+                      <Label htmlFor="signup-username" className="text-sm font-medium text-gray-700">
+                        Username
+                    </Label>
+                      <div className="relative">
+                        <AtSign className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <Input
+                      id="signup-username"
+                      type="text"
+                          placeholder="Choose a username"
+                      value={signupUsername}
+                      onChange={(e) => setSignupUsername(e.target.value)}
+                          className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
+                      required
+                      disabled={isLoading}
+                    />
+                  </div>
+                    </div>
+
+                  <div className="space-y-2">
+                      <Label htmlFor="signup-phone" className="text-sm font-medium text-gray-700">
+                        Phone Number
+                    </Label>
+                      <div className="relative">
+                        <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <Input
+                      id="signup-phone"
+                      type="tel"
+                          placeholder="Enter your phone number"
+                      value={signupPhone}
+                      onChange={(e) => setSignupPhone(e.target.value)}
                           className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
                       required
                       disabled={isLoading}
