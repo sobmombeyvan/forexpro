@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
@@ -15,6 +15,7 @@ const Auth = () => {
   const { t, language, setLanguage } = useLanguage();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState("login");
   
   // Login state
   const [loginEmail, setLoginEmail] = useState("");
@@ -25,38 +26,78 @@ const Auth = () => {
   const [signupPassword, setSignupPassword] = useState("");
   const [signupFullName, setSignupFullName] = useState("");
 
+  // Redirect if already authenticated
   if (user && !loading) {
     return <Navigate to="/dashboard" replace />;
   }
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isLoading) return;
+    
     setIsLoading(true);
     
-    const { error } = await signIn(loginEmail, loginPassword);
-    
-    if (!error) {
-      navigate("/dashboard");
+    try {
+      const { error } = await signIn(loginEmail, loginPassword);
+      
+      if (!error) {
+        // Navigate immediately after successful login
+        navigate("/dashboard", { replace: true });
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+    } finally {
+      setIsLoading(false);
     }
-    
-    setIsLoading(false);
-  };
+  }, [loginEmail, loginPassword, signIn, navigate, isLoading]);
 
-  const handleSignup = async (e: React.FormEvent) => {
+  const handleSignup = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isLoading) return;
+    
     setIsLoading(true);
     
-    const { error } = await signUp(signupEmail, signupPassword, signupFullName);
-    
-    if (!error) {
-      // Reset form
+    try {
+      const { error } = await signUp(signupEmail, signupPassword, signupFullName);
+      
+      if (!error) {
+        // Reset form on successful signup
+        setSignupEmail("");
+        setSignupPassword("");
+        setSignupFullName("");
+        setActiveTab("login");
+      }
+    } catch (error) {
+      console.error('Signup error:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [signupEmail, signupPassword, signupFullName, signUp, isLoading]);
+
+  const handleTabChange = useCallback((value: string) => {
+    setActiveTab(value);
+    // Reset forms when switching tabs
+    if (value === "login") {
       setSignupEmail("");
       setSignupPassword("");
       setSignupFullName("");
+    } else {
+      setLoginEmail("");
+      setLoginPassword("");
     }
-    
-    setIsLoading(false);
-  };
+  }, []);
+
+  // Show loading state while auth is initializing
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-4 relative overflow-hidden">
@@ -166,7 +207,7 @@ const Auth = () => {
             </CardHeader>
 
             <CardContent>
-          <Tabs defaultValue="login" className="w-full">
+          <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
                 <TabsList className="grid w-full grid-cols-2 bg-gray-100 p-1 rounded-xl mb-6">
                   <TabsTrigger 
                     value="login" 
@@ -200,6 +241,7 @@ const Auth = () => {
                       onChange={(e) => setLoginEmail(e.target.value)}
                           className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
                       required
+                      disabled={isLoading}
                     />
                   </div>
                     </div>
@@ -218,6 +260,7 @@ const Auth = () => {
                       onChange={(e) => setLoginPassword(e.target.value)}
                           className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
                       required
+                      disabled={isLoading}
                     />
                   </div>
                     </div>
@@ -259,6 +302,7 @@ const Auth = () => {
                       onChange={(e) => setSignupFullName(e.target.value)}
                           className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
                       required
+                      disabled={isLoading}
                     />
                   </div>
                     </div>
@@ -277,6 +321,7 @@ const Auth = () => {
                       onChange={(e) => setSignupEmail(e.target.value)}
                           className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
                       required
+                      disabled={isLoading}
                     />
                   </div>
                     </div>
@@ -295,6 +340,7 @@ const Auth = () => {
                       onChange={(e) => setSignupPassword(e.target.value)}
                           className="pl-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500 transition-all duration-300"
                       required
+                      disabled={isLoading}
                     />
                   </div>
                     </div>

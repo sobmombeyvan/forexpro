@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -37,7 +36,7 @@ interface Transaction {
 }
 
 const Dashboard = () => {
-  const { user, signOut, loading } = useAuth();
+  const { user, signOut } = useAuth();
   const [profile, setProfile] = useState<Profile | null>(null);
   const [packages, setPackages] = useState<InvestmentPackage[]>([]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -62,9 +61,14 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (user) {
-      fetchProfile();
-      fetchPackages();
-      fetchTransactions();
+      // Load data in parallel for faster performance
+      Promise.all([
+        fetchProfile(),
+        fetchPackages(),
+        fetchTransactions()
+      ]).catch(error => {
+        console.error('Error loading dashboard data:', error);
+      });
     }
   }, [user]);
 
@@ -332,22 +336,9 @@ const Dashboard = () => {
     return;
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center">
-        <div className="text-center space-y-4">
-          <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto animate-pulse">
-            <DollarSign className="w-8 h-8 text-white" />
-          </div>
-          <p className="text-gray-600 font-semibold">Loading your dashboard...</p>
-        </div>
-      </div>
-    );
-  }
 
-  if (!user) {
-    return <Navigate to="/auth" replace />;
-  }
+
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
