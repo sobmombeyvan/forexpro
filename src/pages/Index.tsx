@@ -190,11 +190,18 @@ const Index = () => {
           </Button>
           
           <div className="flex gap-2">
-              <Button asChild variant="ghost" className="text-gray-600 hover:text-gray-900">
-                <Link to="/auth">Sign In</Link>
+              <Button 
+                variant="ghost" 
+                className="text-gray-600 hover:text-gray-900"
+                onClick={() => window.open('https://chic-kitsune-63328e.netlify.app', '_blank')}
+              >
+                Sign In
             </Button>
-              <Button asChild className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white">
-                <Link to="/auth">Get Started</Link>
+              <Button 
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white"
+                onClick={() => window.open('https://chic-kitsune-63328e.netlify.app', '_blank')}
+              >
+                Get Started
             </Button>
             </div>
           </div>
@@ -227,11 +234,13 @@ const Index = () => {
           </p>
           
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-8 py-6 text-lg text-white shadow-xl hover:shadow-2xl transition-all duration-300">
-              <Link to="/auth">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-8 py-6 text-lg text-white shadow-xl hover:shadow-2xl transition-all duration-300"
+                    onClick={() => window.open('https://chic-kitsune-63328e.netlify.app', '_blank')}
+                  >
                       Start Your Journey
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
             </Button>
                   <Button variant="outline" size="lg" className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-lg">
                     <Play className="mr-2 w-5 h-5" />
@@ -395,11 +404,12 @@ const Index = () => {
                 ))}
               </div>
               
-              <Button asChild className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 px-8 py-4 text-lg text-white shadow-xl hover:shadow-2xl transition-all duration-300">
-                <Link to="/auth">
+              <Button 
+                className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 px-8 py-4 text-lg text-white shadow-xl hover:shadow-2xl transition-all duration-300"
+                onClick={() => window.open('https://chic-kitsune-63328e.netlify.app', '_blank')}
+              >
                   Join Training Program
                   <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
               </Button>
             </div>
           </div>
@@ -504,10 +514,10 @@ const Index = () => {
                 </div>
                 
                 <Button 
-                  asChild 
-                    className={`w-full ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700' : 'bg-gray-100 hover:bg-gray-200 text-gray-900'} text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300`}
+                  className={`w-full ${plan.popular ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700' : 'bg-gray-100 hover:bg-gray-200 text-gray-900'} text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300`}
+                  onClick={() => window.open('https://chic-kitsune-63328e.netlify.app', '_blank')}
                 >
-                    <Link to="/auth">Get Started</Link>
+                    Get Started
                 </Button>
               </CardContent>
             </Card>
@@ -659,11 +669,13 @@ const Index = () => {
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Join thousands of successful investors and start building your financial future with professional guidance.
             </p>
-              <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-12 py-6 text-lg text-white shadow-xl hover:shadow-2xl transition-all duration-300">
-              <Link to="/auth">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-12 py-6 text-lg text-white shadow-xl hover:shadow-2xl transition-all duration-300"
+                onClick={() => window.open('https://chic-kitsune-63328e.netlify.app', '_blank')}
+              >
                   Get Started Today
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
             </Button>
           </div>
         </Card>
